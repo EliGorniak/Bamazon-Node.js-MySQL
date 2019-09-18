@@ -25,18 +25,7 @@ function showTable() {
       if (err) throw err;
       console.log("");
       console.log("========== BAMAZON STORE - SELECT PRODUCTS ==========");
-      console.log("ITEM     PRODUCT     DEPARTMENT     PRICE");
-      for (let i = 0; i < rows.length; i++) {
-        console.log(
-          rows[i].item_id +
-            "\t" +
-            rows[i].product_name +
-            "\t" +
-            rows[i].department_name +
-            "\t" +
-            rows[i].price
-        );
-      }
+      console.table(rows);
       console.log("=====================================================");
       questions();
     }
