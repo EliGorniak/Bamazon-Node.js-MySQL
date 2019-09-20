@@ -1,5 +1,6 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
+const colors = require("colors");
 
 // Variable the connection information for the sql db:
 const connection = mysql.createConnection({
@@ -67,11 +68,9 @@ function questions() {
                 "."
             );
           } else {
-            console.log("Insufficient quantity!");
+            console.log("------ Insufficient quantity! ------".red);
           }
         }
       );
     });
 }
-
-// TODO: use connection.end();
