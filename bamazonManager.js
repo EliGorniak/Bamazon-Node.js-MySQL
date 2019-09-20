@@ -1,3 +1,4 @@
+// Variables to require NPM Packages:
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 
@@ -17,6 +18,7 @@ connection.connect(function(err) {
   menu();
 });
 
+// Function to show the table of products:
 function viewProducts() {
   connection.query("SELECT * FROM products", function(err, rows) {
     if (err) throw err;
@@ -27,6 +29,7 @@ function viewProducts() {
   });
 }
 
+// Function to show the table of products under 5 units in stock:
 function viewLowInventory() {
   connection.query("SELECT * FROM products WHERE stock_quantity < 5", function(
     err,
@@ -44,6 +47,7 @@ function viewLowInventory() {
   });
 }
 
+// Function to add more quantity to the table of products:
 function addToInventory() {
   inquirer
     .prompt([
@@ -69,6 +73,7 @@ function addToInventory() {
     });
 }
 
+// Function to add more producs to the database/table:
 function addNewProduct() {
   inquirer
     .prompt([

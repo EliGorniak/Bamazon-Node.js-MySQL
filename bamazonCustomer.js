@@ -1,3 +1,4 @@
+// Variables to require NPM packages:
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const colors = require("colors");
